@@ -1,6 +1,18 @@
+
+:root{ /*definindo variáveis. Usa-se quando repetimos as informações. Se mudarmos, podemos mudar todas de uma vez*/
+    --azul-dnc: #0c70f2;
+    --preto-dnc: #303030;
+    --cinza-hover: #C9C9C9;
+
+    --fonte-padrao: "Inter";
+}
+
 body{
     margin: 0px; /*margem externa dos componentes*/
     padding: 0px; /*margem interna dos componentes*/
+
+    background: linear-gradient(180deg, rgba(12, 112, 242, 0.5) 19.91%, rgba(12, 112, 242, 0) 24.84%),#303030;
+    background-repeat: no-repeat; /*limita o tamanho do gradiente para as definições que fiz acima*/
 }
 
 /*Menu de Navegação*/
@@ -9,7 +21,7 @@ body{
     width: 100%;
     height: 100px;
     border: 1px solid black;
-    background-color: #303030;
+    background-color: var(--preto-dnc);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +38,7 @@ body{
     }
 
     #principal div a {
-        font-family: 'Inter';  
+        font-family: var(--fonte-padrao);  
         font-size: 25px;
         font-weight: 600;
         color: #FFFFFF;
@@ -34,16 +46,16 @@ body{
     }
 
         #principal div a:hover{ /*Hover é a movimentação de quando o mouse passa por cima de um objeto*/
-            color: #CCCCCC; /*Passa o mouse em cima e troca a cor*/
+            color: var(--cinza-hover); /*Passa o mouse em cima e troca a cor*/
         }
 
     #principal button{
         margin-right: 5%;
-        background-color: #0C70F2;
+        background-color: var(--azul-dnc);
         border: 0px;
         height: 39px;
         width: 80px;
-        font-family: 'Inter';  
+        font-family: var(--fonte-padrao);  
         font-size: 20px;
         font-weight: 600;
         color: #FFFFFF;
@@ -51,4 +63,98 @@ body{
         cursor: pointer; /*quando o mouse passar por cima do botão, vai mudar de seta para o dedinho apontando*/
     }
 
+    /*SEÇÃO PRINCIAPL DO SITE*/
 
+    section{
+        display: flex;
+        flex-direction: column; /*respeitando uma coluna inteira*/
+        align-items: center;
+
+        margin-top: 100px;
+        margin-bottom: 100px;    
+    }
+
+        header{
+            color: white;
+            font-family: var(--fonte-padrao);
+        }
+
+        header h1{
+            text-transform: uppercase; /*tudo maiusculo*/
+            text-align: center;
+            font-size: 80px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        header h2{
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 100px;
+        }
+
+        header .inverte{
+            background-color: black;
+            font-weight: bold;
+            padding:5px;
+        }
+
+        /*FOMULÁRIO*/
+
+        form{
+            color: white;
+            font-family: var(--fonte-padrao);
+            font-size: 30px;
+            font-weight: 600;
+            width: 600px;
+        }
+
+        .form-group{
+            display:flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        form input{
+            border-radius: 5px;
+            border: none;
+            height: 30px;
+            font-size: 15px;
+            padding: 10px;
+            background-color: #FFFFFFE5;
+        }
+
+        form label{
+            margin: 5px 0px 5px 0px;
+        }
+
+        form input::placeholder{ /*seletores*/
+            color: #39393980;
+        }
+
+        .checkbox-itens label{
+            font-size: 25px;
+        }
+
+        .checkbox-itens{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;            
+        }
+
+        input[type="checkbox"]{
+            transform: scale(1.7);
+        }
+
+        input[type="submit"]{
+            background-color: #0C70F2E5;
+            color: #FFFFFF;
+            width: 100%;
+            height: 56px;
+            font-size: 32px;
+            margin-top: 100px;
+            box-shadow: 0px 6px 4px 0px #0C70F240;
+            cursor: pointer;
+        }
